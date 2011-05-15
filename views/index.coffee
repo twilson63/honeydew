@@ -1,4 +1,4 @@
-div 'data-role': 'page', 'data-id': 'home', ->
+div id: 'home', 'data-role': 'page', 'data-id': 'home', ->
   div 'data-role': 'header', ->
     h1 @title
     a href: '#add', 'Add Dew'
@@ -10,7 +10,7 @@ div 'data-role': 'page', 'data-id': 'home', ->
           label for: dew, dew
       button id: 'Complete', 'Complete checked Honeydews'
 
-div 'data-role': 'page', 'data-id': 'add', ->
+div id: 'add', 'data-role': 'page', 'data-id': 'add', ->
   div 'data-role': 'header', ->
     h1 "Add -> #{@title}"
   div 'data-role': 'content', ->
@@ -18,4 +18,5 @@ div 'data-role': 'page', 'data-id': 'add', ->
       div 'data-role': 'fieldcontain', ->
         textarea cols: '40', rows: '8', name: 'description', id: 'description'
       button 'Add Honeydew'
+
 
