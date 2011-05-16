@@ -4,10 +4,7 @@ div id: 'home', 'data-role': 'page', 'data-id': 'home', ->
     a href: '#add', 'Add Dew'
   div 'data-role': 'content', ->
     form method: 'post', action: '/complete', ->
-      fieldset 'data-role': 'controlgroup', ->
-        for dew in @honeydews
-          input type: 'checkbox', name: dew, id: dew
-          label for: dew, dew
+      fieldset 'data-role': 'controlgroup', id: 'honeydew-list-container'
       button id: 'Complete', 'Complete checked Honeydews'
 
 div id: 'add', 'data-role': 'page', 'data-id': 'add', ->
@@ -19,4 +16,12 @@ div id: 'add', 'data-role': 'page', 'data-id': 'add', ->
         textarea cols: '40', rows: '8', name: 'description', id: 'description'
       button 'Add Honeydew'
 
+
+script id: 'honeydew-list', type: 'text/x-handlebars-template', ->
+  '''
+  {{#each honeydews}}
+  <input type='checkbox' name='{{id}}' id='{{id}}' />
+  <label for='{{id}}'>{{description}}</label>
+  {{/each}}
+  '''
 
